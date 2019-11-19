@@ -1,0 +1,17 @@
+<view class="detailsBox" style="background: url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') center/contain;">
+  <view class="advertising">
+    我是个广告
+  </view>
+  <view>
+    <view class="picBox">
+      <view class="pic">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <image class="picBg picBgA"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png">
+      </image>
+    </view>
+  </view>
+
+
+  <image class="music" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png"></image>
+</view>

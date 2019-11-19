@@ -1,0 +1,7 @@
+page {
+  /* padding-bottom: 96rpx; */
+   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+

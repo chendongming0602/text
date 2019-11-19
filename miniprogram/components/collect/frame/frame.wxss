@@ -1,0 +1,56 @@
+.frame{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(1,1,1,0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frameItem{
+  width: 648rpx;
+  height: 888rpx;
+  background: #fff;
+  border-radius:24rpx;
+  padding: 50rpx;
+}
+.frame1,.frame2{
+  font-size: 32rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.frame1 image{
+  width: 40rpx;
+  height: 12rpx;
+  margin-left: 15rpx;
+}
+.frame1Img{
+  width: 100%;
+  height: 154rpx;
+  margin-top: 20rpx;
+}
+.frame2{
+  margin-top: 40rpx;
+}
+.frame2 text{
+  color: rgb(233, 0, 0);
+}
+.frame2Img{
+  width: 100%;
+  height:340rpx;
+  margin-top:  40rpx;
+}
+.know{
+  width:100%;
+  line-height:84rpx;
+  background:rgba(102,171,66,1);
+  border-radius:10rpx;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  margin-top:  40rpx;
+}

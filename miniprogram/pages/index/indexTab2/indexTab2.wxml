@@ -1,0 +1,22 @@
+<scroll-Box
+  class="scroll-box"
+  bind:pulldown="onPullDown"
+  bind:reachbottom="onReachBottom"
+>
+  <view class="pulldown-loadng" slot="pulldown-loading-ele">
+    <view class="loading-icon-text">
+      <!-- <image class="loadingImg"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
+      正在刷新...
+    </view>
+  </view>
+
+  <view class="newBox" slot="main">
+    <view class="advertising2">
+      <view>我是个广告</view>
+    </view>
+    <!-- 热门内容 -->
+    <listBox name="热门内容"></listBox>
+    <!-- 更多内容 -->
+    <listBox  name="更多内容" isEmpty="true"></listBox>
+  </view>
+</scroll-Box>

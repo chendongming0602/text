@@ -1,0 +1,54 @@
+.ListBox1{
+  padding: 0rpx 30rpx 55rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.item1{
+  text-align: center;
+  color: #D61313;
+  width: 334rpx;
+  margin-top: 40rpx;
+}
+.itemImg{
+  width: 100%;
+  height: 223rpx;
+  border-radius: 20rpx;
+  margin-bottom: 16rpx;
+}
+.advertising1{
+  width: 100%;
+  height: 232rpx;
+  background: #f0f;
+  margin-top: 40rpx; 
+}
+
+.tab1Title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 25rpx; 
+  
+}
+.tab1Title image{
+  width: 66rpx;
+  height: 34rpx;
+}
+.newContent{
+  color: #D61313;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 0 15rpx;
+}
+
+
+.empty1{
+  width: 100%;
+  line-height: 68rpx;
+  text-align: center;
+  color: #698111;
+  margin-top: 48rpx;
+  background: #EAFFDC;
+}

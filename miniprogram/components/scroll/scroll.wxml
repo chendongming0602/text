@@ -1,0 +1,22 @@
+<scroll-view
+  class="scroll-view"
+  scroll-y="{{true}}"
+  bindscrolltoupper="bindscrolltoupper"
+  bindscrolltolower="bindscrolltolower"
+  bindscroll="bindscroll"
+  bindtouchstart="touchstart"
+  bindtouchmove="touchmove"
+  bindtouchend="touchend"
+  scroll-into-view="{{intoEle || ''}}"
+>
+  <view id="top"></view>
+  <view class="pulldown-loading-box" style="transform: translateY(-{{100 - offset}}%);top:{{pulldownTop}}rpx;">
+    <slot name="pulldown-loading-ele"></slot>    <!-- 下拉 -->
+  </view>
+  <view class="main" style="transform:translateY({{offset * 2}}rpx);">
+    <slot name="main"></slot>    <!-- 内容 -->
+    <slot name="reach-bottom-ele"></slot>    <!-- 上拉 -->
+  </view>
+  <view id="bottom"></view>
+</scroll-view>
+

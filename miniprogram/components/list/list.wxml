@@ -1,0 +1,17 @@
+ <view class="tab1Title">
+    <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/cloudLeft.png"></image>
+    <text class="newContent">{{name}}</text>
+    <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/cloudRight.png"></image>
+  </view>
+<view class="ListBox1">
+  <block wx:for="{{6}}" wx:key="{{index}}">
+    <view class="item1">
+      <image class="itemImg" src="http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg"></image>
+      中国第一了哈哈哈{{index}}
+    </view>
+    <!-- <view class="advertising1" wx:if="{{index===1}}">我是个广告</view> -->
+  </block>
+  <view class="empty1" wx:if="{{isEmpty}}">
+    暂无更多图文～
+  </view>
+</view>

@@ -1,0 +1,34 @@
+.collectBox{
+  width: 100%;
+  height: 82rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #66AB42;
+  padding: 0 40rpx 0 24rpx;
+}
+.ceLeft{
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.dot{
+  width: 40rpx;
+  height: 12rpx;
+  margin: 0 15rpx;
+}
+.ceRight{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 135rpx;
+}
+.hand{
+  width: 50rpx;
+  height: 50rpx;
+}
+.close{
+  width: 32rpx;
+  height: 32rpx;
+}

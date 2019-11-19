@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "scroll-Box":"/components/scroll/scroll",
+    "collect":"/components/collect/collect",
+    "listBox":"/components/list/list"
+  }
+}

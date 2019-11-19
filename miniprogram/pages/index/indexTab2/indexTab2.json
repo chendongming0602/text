@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "scroll-Box": "/components/scroll/scroll",
+    "listBox": "/components/list/list"
+  }
+}

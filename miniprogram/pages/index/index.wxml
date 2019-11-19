@@ -1,0 +1,4 @@
+<frame id="frame"></frame>
+<indexTab1 wx:if="{{tabCount===0}}"></indexTab1>
+<indexTa2 wx:if="{{tabCount===1}}"></indexTa2>
+<tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>

@@ -1,0 +1,26 @@
+
+<scroll-Box
+  class="scroll-box"
+  bind:pulldown="onPullDown"
+  bind:reachbottom="onReachBottom"
+>
+  <view class="pulldown-loadng" slot="pulldown-loading-ele">
+    <view class="loading-icon-text">
+      <!-- <image class="loadingImg"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
+      正在刷新...
+    </view>
+  </view>
+
+  <view class="newBox" slot="main">
+    <!-- 收藏小程序 -->
+    <collect></collect>
+    <view class="newTop">
+      <image src="http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg"></image>
+    </view>
+    <!-- 最新内容 -->
+    <listBox name="最新内容"></listBox>
+    <!-- 更多内容 -->
+    <listBox name="更多内容" isEmpty="true"></listBox>
+  </view>
+
+</scroll-Box>

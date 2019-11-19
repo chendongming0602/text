@@ -1,0 +1,6 @@
+<view class="tabBox">
+  <view class="tabList {{count!==index?'tabListColor':''}}" wx:for="{{list}}" wx:key="{{index}}" catchtap="tabEvent" data-index="{{index}}">
+    <image class="tabImg" src="{{count===index?item.url:item.urlNo}}"></image>
+    {{item.name}}
+  </view>
+</view>

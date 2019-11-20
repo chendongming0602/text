@@ -1,0 +1,35 @@
+@import '/utils/css/all.wxss';
+.recTop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 44rpx;
+  color: #f00;
+  font-weight: bold;
+  margin: 60rpx 0 30rpx;
+}
+.recTop view{
+  width: 128rpx;
+  height: 4rpx;
+  background: #D61313;
+}
+.recTop text{
+  margin: 0 20rpx;
+}
+.recItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #D8D8D8;
+  margin-top: 30rpx;
+}
+.recItemTitle{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.recItemImg{
+  width: 216rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+}

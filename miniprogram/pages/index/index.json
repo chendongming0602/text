@@ -4,7 +4,5 @@
     "frame":"/components/collect/frame/frame",
     "indexTab1":"./indexTab1/indexTab1",
     "indexTa2":"./indexTab2/indexTab2"
-  },
-  "navigationBarTitleText": "蜜囍美文",
-  "navigationBarBackgroundColor": "#D61313"
+  }
 }

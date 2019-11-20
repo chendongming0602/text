@@ -1,3 +1,4 @@
+@import '/utils/css/all.wxss';
 .ListBox1{
   padding: 0rpx 30rpx 55rpx;
   display: flex;

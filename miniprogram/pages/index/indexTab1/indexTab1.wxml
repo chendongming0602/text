@@ -18,9 +18,9 @@
       <image src="http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg"></image>
     </view>
     <!-- 最新内容 -->
-    <listBox name="最新内容"></listBox>
+    <listBox name="最新内容" list="{{list}}"></listBox>
     <!-- 更多内容 -->
-    <listBox name="更多内容" isEmpty="true"></listBox>
+    <listBox name="更多内容" isEmpty="true" list="{{list}}" isEmptyList="{{isEmptyList}}"></listBox>
   </view>
 
 </scroll-Box>

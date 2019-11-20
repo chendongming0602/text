@@ -33,12 +33,9 @@
 }
 view, scroll-view, swiper, button, input, textarea, label, navigator, image {
   box-sizing: border-box;
-  font-size: 28rpx;
-  color: #333;
+  /* font-size: 28rpx;
+  color: #333; */
   --border: #DEDEDE;
-}
-image{
-  display: block;
 }
 
 /**app.wxss**/

@@ -1,3 +1,4 @@
+@import '/utils/css/all.wxss';
 .scroll-box {
   display: block;
   height: 100vh;

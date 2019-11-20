@@ -11,7 +11,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    show:true
   },
 
   /**
@@ -21,6 +21,11 @@ Component({
     collectBox(){
       const pages = getCurrentPages() || [];
       pages[0].frameEvent()
+    },
+    close(){
+      this.setData({
+        show:false
+      })
     }
   }
 })

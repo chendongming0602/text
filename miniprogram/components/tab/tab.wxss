@@ -1,3 +1,4 @@
+@import '/utils/css/all.wxss';
 .tabBox{
   position: fixed;
   bottom: 0;

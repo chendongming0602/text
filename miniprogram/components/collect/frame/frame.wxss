@@ -1,3 +1,4 @@
+@import '/utils/css/all.wxss';
 .frame{
   position: fixed;
   top: 0;

@@ -3,19 +3,24 @@ const APP = getApp()
 
 Page({
   data: {
-    tabCount:1,//选择的tab
+    tabCount:0,//选择的tab
+    tabIf:[true,false]
   },
-  tabIdex(e){
+  tabIdex(e){//tab事件
     this.setData({
-      tabCount:e.detail
-    })
+      tabCount:e.detail,
+      [`tabIf[${e.detail}]`]:true
+    });
+
   },
   frameEvent(){//打开收藏提示框
     this.selectComponent('#frame').showEvent()
   },
+  
   onLoad: function() {
     
   },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

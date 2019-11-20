@@ -1,7 +1,7 @@
 //app.js
 App({
   config:{
-    apiHost:"",
+    apiHost:"http://wz.lr.com",
 
   },
   request({ path = '/', method, data }) {
@@ -12,8 +12,8 @@ App({
         // header: headers,
         data: data || {},
         success: res => {
-          if (res) {
-            resolve(res)
+          if (res.statusCode===200) {
+            resolve(res.data.data)
           } else {
             reject(res)
           }

@@ -1,0 +1,11 @@
+<view class="recTop">
+  <view></view>
+    <text>相关推荐</text>
+  <view></view>
+</view>
+<block wx:for="{{5}}" wx:key="{{index}}">
+  <view class="recItem">
+    <view class="recItemTitle">十大元帅夫人最美照片，你 都见过吗，太珍贵了！</view>
+    <image class="recItemImg" src="http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg"></image>
+  </view>
+</block>

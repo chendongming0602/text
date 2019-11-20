@@ -5,9 +5,14 @@ Component({
    */
   properties: {
     name:String,
-    isEmpty:{
+    isEmpty:{//是否显示为空
       type:Boolean,
       value:false
+    },
+    list:Array,//数据
+    isEmptyList:{//数据为空
+      type:Boolean,
+      value:true
     }
   },
 

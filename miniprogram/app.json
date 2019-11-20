@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/details/details",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/details/details"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#D61313",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#D61313",
+    "navigationBarTitleText": "蜜囍美文",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

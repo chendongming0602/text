@@ -59,7 +59,10 @@
   }
 }
 .picBgA{
-  animation: picBgA 5s linear infinite;
+  animation: picBgA 10s linear infinite;
+}
+.musicA{
+  animation: picBgA 3s linear infinite;
 }
 .userName{
   text-align: center;

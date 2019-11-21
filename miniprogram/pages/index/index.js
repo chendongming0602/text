@@ -4,7 +4,7 @@ const APP = getApp()
 Page({
   data: {
     tabCount:0,//选择的tab
-    tabIf:[true,false]
+    tabIf:[false,false]
   },
   tabIdex(e){//tab事件
     this.setData({
@@ -18,7 +18,9 @@ Page({
   },
   
   onLoad: function() {
-    
+    this.setData({
+      [`tabIf[${this.data.tabCount}]`]: true
+    })
   },
   
   /**
@@ -39,7 +41,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    wx.hideLoading();
   },
 
   /**
@@ -67,6 +69,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: "蜜囍美文",
+      imageUrl: "https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top.png",
+      path: '/pages/index/index'
+    };
   }
 })

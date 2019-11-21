@@ -6,10 +6,10 @@
 
 <view class="ListBox1">
   <block wx:for="{{list}}" wx:key="{{index}}">
-    <navigator class="item1" url="/pages/details/details?id={{item.id}}" hover-class="none">
-      <image class="itemImg" src="{{item.more.thumbnail}}"></image>
-      中国第一了哈哈哈{{index}}
-    </navigator>
+    <view catchtap="goDetail" class="item1"  data-id="{{item.id}}">
+      <image mode="aspectFill" class="itemImg" src="{{item.more.thumbnail}}"></image>
+      <view class="item1Text">{{item.post_title}}</view>
+    </view>
     <!-- <view class="advertising1" wx:if="{{index===1}}">我是个广告</view> -->
   </block>
   <view class="empty1" wx:if="{{isEmpty&&!isEmptyList}}">

@@ -15,10 +15,10 @@
     <!-- 收藏小程序 -->
     <collect></collect>
     <view class="newTop">
-      <image src="http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg"></image>
+      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top2.png"></image>
     </view>
     <!-- 最新内容 -->
-    <listBox name="最新内容" list="{{list}}"></listBox>
+    <listBox name="最新内容" list="{{newList}}"></listBox>
     <!-- 更多内容 -->
     <listBox name="更多内容" isEmpty="true" list="{{list}}" isEmptyList="{{isEmptyList}}"></listBox>
   </view>

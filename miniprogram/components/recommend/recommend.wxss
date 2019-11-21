@@ -1,4 +1,4 @@
-@import '/utils/css/all.wxss';
+/* @import '/utils/css/all.wxss'; */
 .recTop{
   display: flex;
   justify-content: center;
@@ -29,7 +29,9 @@
   font-weight: bold;
 }
 .recItemImg{
-  width: 216rpx;
-  height: 150rpx;
+  min-width: 216rpx;
+  min-height: 150rpx;
+  max-width: 216rpx;
+  max-height: 150rpx;
   border-radius: 15rpx;
 }

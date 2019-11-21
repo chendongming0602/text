@@ -15,7 +15,7 @@
       <view>我是个广告</view>
     </view>
     <!-- 热门内容 -->
-    <listBox name="热门内容" list="{{list}}"></listBox>
+    <listBox name="热门内容" list="{{newList}}"></listBox>
     <!-- 更多内容 -->
     <listBox  name="更多内容" isEmpty="true" list="{{list}}" isEmptyList="{{isEmptyList}}" ></listBox>
   </view>

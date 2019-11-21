@@ -1,4 +1,5 @@
 // components/list/list.js
+const APP=getApp();
 Component({
   /**
    * 组件的属性列表
@@ -27,6 +28,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goDetail(e){
+      let { id } = e.currentTarget.dataset
+      console.log(id)
+      wx.showLoading({
+        title: '努力加载中...',
+        mask:true
+      })
+      wx.navigateTo({
+        url: '/pages/details/details?id='+id,
+      });
+    },
   }
 })

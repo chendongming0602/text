@@ -1,6 +1,6 @@
 <import src="/utils/wxParse/wxParse.wxml" />
 
-<view class="detailsBox" style="background: url({{list.more.beackimg}}) center/contain;" hidden="{{!isList}}">
+<view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
   <view class="advertising">
     我是个广告
   </view>
@@ -10,16 +10,16 @@
       <view class="pic">
         <open-data type="userAvatarUrl"></open-data>
       </view>
-      <image class="picBg picBgA"  src="{{list.more.headimg}}">
+      <image class="picBg picBgA"  src="{{list.more.headimg?list.more.headimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png'}}">
       </image>
     </view>
 
     <view class="userName">
       亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
     </view>
-    <view class="benediction">我是做小刀锋利</view>
-    <view class="benediction">我是做小刀锋利地方接口第三方</view>
-    <view class="benediction">我是做小刀锋利</view>
+    <view class="benediction">{{list.post_title}}</view>
+    <view class="benediction">{{list.post_title}}</view>
+    <view class="benediction">{{list.post_title}}</view>
     <view class="flowerBox">
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
@@ -46,7 +46,7 @@
     我是个广告
   </view>
   <!-- 推荐 -->
-  <recommend></recommend>
+  <recommend list="{{listArr}}"></recommend>
   <view class="flowerBox">
     <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
   </view>
@@ -77,7 +77,7 @@
     </view>
   </view>
   <!-- 音乐图标 -->
-  <image catchtap="musicImg" class="music {{isDistance?'music2':''}} {{isMusic?'picBgA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
+  <image catchtap="musicImg" class="music {{isDistance?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
 </view>
 
 <view hidden="{{isList}}" class="load">

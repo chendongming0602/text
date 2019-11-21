@@ -14,24 +14,32 @@ Component({
   data: {
     list: [],
     isEmptyList: true,//加载为空了
+    newList: []
   },
   attached() {
     this.more = false;//是否是上拉加载
     this.page = 1
-    this.newList();
+    APP.loadShow()
+    Promise.all([this.moreList(), this.newList()])
+      .then(() => {
+        wx.hideLoading()
+      }).catch(err => {
+        wx.hideLoading();
+        APP.hintShow("加载数据失败！！")
+      })
   },
   /**
    * 组件的方法列表
    */
   methods: {
-    newList() {
+    moreList() {//更多
       let data = this.data
-      APP.loadShow()
       return APP.request({
         path: "/api/portal/articles/index",
         method: "POST",
         data: {
-          page: this.page
+          page: this.page,
+          type:"more"
         }
       }).then(res => {
         if (res.length < 20) {
@@ -40,32 +48,53 @@ Component({
         this.setData({
           list: this.more ? data.list.concat(res) : res
         });
-        wx.hideLoading()
-        console.log(res, 111)
-      }).catch(err => {
-        wx.hideLoading();
-        APP.hintShow("请求数据失败!");
+      });
+    },
+    newList() {//热门
+      return APP.request({
+        path: "/api/portal/articles/index",
+        method: "POST",
+        data: {
+          page: 1,
+          type:"hot"
+        }
+      }).then(res => {
+        this.setData({
+          newList: res
+        });
       })
     },
-    onPullDown(e) {//上拉刷新
+    onPullDown(e) {//下拉刷新
+      APP.loadShow()
       const { stop } = e.detail;
       this.setData({
         isEmptyList: true,
       });
       this.more = false;
       this.page = 1;
-      this.newList().then(() => {
-        stop()
+      Promise.all([this.moreList(), this.newList()])
+      .then(() => {
+        wx.hideLoading();
+        stop();
+      }).catch(err => {
+        stop();
+        APP.hintShow("刷新失败！！")
       });
     },
     onReachBottom(e) {
       const { stop } = e.detail;
       if (!this.data.isEmptyList) return stop();
+      APP.loadShow();
       this.more = true;
       this.page += 1
-      this.newList().then(() => {
-        stop()
-      });
+      this.moreList().then(() => {
+        stop();
+        wx.hideLoading()
+      }).catch(() => {
+        wx.hideLoading();
+        stop();
+        APP.hintShow("上拉加载失败！")
+      })
     }
   }
 })

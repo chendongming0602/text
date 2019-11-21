@@ -1,7 +1,7 @@
 //app.js
 App({
   config:{
-    apiHost:"http://wz.lr.com",
+    apiHost:"https://article.silver.yazai.com",
 
   },
   request({ path = '/', method, data }) {

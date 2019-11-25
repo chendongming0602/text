@@ -1,6 +1,7 @@
 // miniprogram/pages/details/details.js
 const APP = getApp()
-const WxParse = require('../../utils/wxParse/wxParse.js');
+// const WxParse = require('../../utils/wxParse/wxParse.js');//组件解析（卡）
+import {rich} from '../../utils/rich.js';//解析富文本
 const music = wx.createInnerAudioContext();//背景音乐
 Page({
 
@@ -13,6 +14,8 @@ Page({
     isList:false,//数据加载完成
     list:{},
     listArr:[],//推荐列表
+    adShow: APP.adShow,//广告位显示
+    content:""
   },
 
   musicImg() {//背景音乐的按钮
@@ -36,10 +39,14 @@ Page({
       method: "POST"
     }).then(res => {
       let text = res.post_content;
-      WxParse.wxParse("textHtml", 'html', text, this);
+      // WxParse.wxParse("textHtml", 'html', text, this);
       setTimeout(() => {//延时给富文本渲染
         this.setData({ isList: true })
-      }, 800);
+      }, 500);
+      let richText = rich(text);//解析完成后的
+      this.setData({
+        content: richText
+      })
       let obj = {};//将不必要的地方去掉，减少data的压力
       for(var key in res){
         if (key !== "post_content")

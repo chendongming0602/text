@@ -1,7 +1,7 @@
 <import src="/utils/wxParse/wxParse.wxml" />
 
 <view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
-  <view class="advertising">
+  <view class="advertising" wx:if="{{adShow}}">
     我是个广告
   </view>
   <!-- 头部 -->
@@ -18,16 +18,19 @@
       亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
     </view>
     <view class="benediction">{{list.post_title}}</view>
-    <view class="benediction">{{list.post_title}}</view>
-    <view class="benediction">{{list.post_title}}</view>
+    <!-- <view class="benediction">{{list.post_title}}</view>
+    <view class="benediction">{{list.post_title}}</view> -->
     <view class="flowerBox">
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
   </view>
   <!-- 正文 -->
-  <view class="zhengwen">
+  <!-- 组件 -->
+  <!-- <view class="zhengwen">
   <template is="wxParse" data="{{wxParseData:textHtml.nodes}}" /> 
-  </view>
+  </view> -->
+  <!-- 自己 -->
+  <rich-text nodes="{{content}}" space="nbsp"></rich-text>
   <!-- 底部 -->
   <view class="detailTop">
     <view class="picBox">
@@ -42,7 +45,7 @@
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
   </view>
-  <view class="advertising">
+  <view class="advertising" wx:if="{{adShow}}">
     我是个广告
   </view>
   <!-- 推荐 -->
@@ -50,7 +53,7 @@
   <view class="flowerBox">
     <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
   </view>
-  <view class="advertising">
+  <view class="advertising" wx:if="{{adShow}}">
     我是个广告
   </view>
   <navigator open-type="navigateBack" class="goIndex" url="/pages/index/index" hover-class="none">
@@ -77,7 +80,7 @@
     </view>
   </view>
   <!-- 音乐图标 -->
-  <image catchtap="musicImg" class="music {{isDistance?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
+  <image catchtap="musicImg" class="music {{isDistance||!adShow?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
 </view>
 
 <view hidden="{{isList}}" class="load">

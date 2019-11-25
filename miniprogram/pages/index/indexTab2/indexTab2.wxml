@@ -11,7 +11,7 @@
   </view>
 
   <view class="newBox" slot="main">
-    <view class="advertising2">
+    <view class="advertising2" wx:if="{{adShow}}">
       <view>我是个广告</view>
     </view>
     <!-- 热门内容 -->

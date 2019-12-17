@@ -61,11 +61,11 @@
     返回首页
   </navigator>
 
-  <view class="flock rewardA">
+  <!-- <view class="flock rewardA">
     <button open-type="contact" hover-class="none">
       群
     </button>
-  </view>
+  </view> -->
 
   <view class="shareBtn">
     <view>

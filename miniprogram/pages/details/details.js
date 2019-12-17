@@ -19,7 +19,7 @@ Page({
   },
 
   musicImg() {//背景音乐的按钮
-    if (this._isMusic) return APP.hintShow("背景音乐播放失败！")
+    if (this._isMusic) return //APP.hintShow("背景音乐播放失败！")
     this.setData({
       isMusic: !this.data.isMusic
     }, () => {
@@ -79,16 +79,17 @@ Page({
     APP.loadShow()
     Promise.all([this.detailList(),this.recommend()])
     .then(res=>{
+      wx.hideLoading()
       try{
         console.log(res[0].more.audio)
         if (!res[0].more.audio){
-          APP.hintShow("背景音乐播放失败！");
+          // APP.hintShow("背景音乐播放失败！");
           this.setData({ isMusic: false });
           this._isMusic = true;
           return
         }
         music.onError((e) => {
-          APP.hintShow("背景音乐播放失败！");
+          // APP.hintShow("背景音乐播放失败！");
           this.setData({ isMusic: false });
           this._isMusic = true;
         });
@@ -104,7 +105,7 @@ Page({
         // })
        
       }catch(err){
-        APP.hintShow("背景音乐播放失败！");
+        // APP.hintShow("背景音乐播放失败！");
         this.setData({isMusic:false});
         this._isMusic=true
       }

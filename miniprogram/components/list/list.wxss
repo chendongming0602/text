@@ -10,6 +10,8 @@
   text-align: center;
   width: 334rpx;
   margin-top: 40rpx;
+  min-width: 334rpx;
+  min-height: 314rpx;
 }
 .itemImg{
   width: 100%;

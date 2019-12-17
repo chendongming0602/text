@@ -7,7 +7,7 @@
     "backgroundColor": "#D61313",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#D61313",
-    "navigationBarTitleText": "蜜囍美文",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",

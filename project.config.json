@@ -24,6 +24,7 @@
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -40,6 +41,10 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 1,
 			"list": [
@@ -51,9 +56,9 @@
 				},
 				{
 					"id": 1,
-					"name": "详情",
+					"name": "pages/details/details",
 					"pathName": "pages/details/details",
-					"query": "id=41",
+					"query": "id=108",
 					"scene": null
 				}
 			]

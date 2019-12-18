@@ -1,4 +1,4 @@
-@import "/utils/wxParse/wxParse.wxss";
+/* @import "/utils/wxParse/wxParse.wxss"; */
 .detailsBox{
   /* background-size: 100% 100%; */
   width: 100vw;

@@ -3,6 +3,7 @@
     "tab":"/components/tab/tab",
     "frame":"/components/collect/frame/frame",
     "indexTab1":"./indexTab1/indexTab1",
-    "indexTa2":"./indexTab2/indexTab2"
+    "indexTa2":"./indexTab2/indexTab2",
+    "loginFrame":"/components/login/login"
   }
 }

@@ -1,13 +1,26 @@
 //app.js
+try{
+  wx.cloud.init({
+    traceUser: true,
+    env: 'text1-jpf2z'
+  });
+}catch(err){
+ 
+}
+const ald = require('./utils/ald-stat.js');//配置阿里丁
+import { config } from './utils/config.js';
+let { ver } = require('./utils/version.js');//审核关闭需要的东西
 App({
-  config:{
-    apiHost:"https://article.silver.yazai.com",
+
+  userInfo:{
+    isPower:false
   },
+  isCallback:false,
   adShow:false,
   request({ path = '/', method, data }) {
     return new Promise((resolve, reject) => {
       wx.request({
-        url: `${this.config.apiHost}${path}`,
+        url: `${config.apiHost}${path}`,
         method: method || 'GET',
         // header: headers,
         data: data || {},
@@ -35,8 +48,81 @@ App({
       duration:2000
     })
   },
+  getUserPic() {//授权请求
+    return new Promise((resolve, reject) => {
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            this.userInfo.isPower = true;//已经授权
+            // console.log(this.userInfo.isPower)
+            // resolve()
+            ///////////////////////////////////
+            // console.log(this.userInfo.isPower)
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+            /////////////////////////////////////////////////////////
+            this.userLogin().then(resolve);//登录函数
+          } else {
+            console.log("app: " + "用户暂时未授权")
+            resolve()
+          };
+
+        }
+      });
+    })
+
+  },
+  userLogin() {//登录请求
+    let _this = this
+    return new Promise((resolve, reject) => {
+      wx.login({
+        success: res => {
+          let codes = res.code
+          wx.getUserInfo({
+            success(res) {
+              _this.request({
+                path: "/api/wx/login/wxLogin",
+                method: "POST",
+                data: {
+                  code: codes,
+                }
+              }).then(res => {
+                _this.isCallback = true;//告诉主页登录成功
+                // console.log("用户信息", res)
+                _this.userInfo = {
+                  isPower: true,
+                  ...res
+                };
+                wx.aldstat.sendOpenid(res.openid);
+                // wx.setStorage({//缓存token
+                //   key: "tokens",
+                //   data: res.token
+                // });
+                resolve();
+              })
+            },
+            fail: reject
+
+          });
+
+        },
+        fail: reject
+      });
+    });
+  },
   onLaunch: function () {
-    
+    Promise.all([this.getUserPic(), ver()]).then(() => {
+      console.log("全部调用完成");
+      this.isCallback = true;//向首页传递已经判断授权
+      if (this.checkLoginReadyCallback) {
+        this.checkLoginReadyCallback();
+      }
+    }).catch((err)=>{//报错给授权
+      this.userInfo.isPower = true;//已经授权
+      this.isCallback = true;//向首页传递已经判断授权
+      if (this.checkLoginReadyCallback) {
+        this.checkLoginReadyCallback();
+      }
+    })
     // if (!wx.cloud) {
     //   console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     // } else {

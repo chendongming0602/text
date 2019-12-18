@@ -1,0 +1,52 @@
+.loginC{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(1,1,1,0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.centerC{
+  width: 648rpx;
+  height: 792rpx;
+  padding: 64rpx 28rpx 52rpx;
+  background: #fff;
+  border-radius:24rpx;
+}
+.title{
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+.title text{
+  color: #D61313;
+}
+.loginImg{
+  margin-top: 22rpx;
+  width: 100%;
+  height: 504rpx;
+}
+.but{
+  width:558rpx;
+  line-height:84rpx;
+  background:rgba(102,171,66,1);
+  border-radius:10rpx;
+  margin: 22rpx auto 0;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+}
+.but button{
+  margin: 0;
+  padding: 0;
+  line-height:84rpx;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+}

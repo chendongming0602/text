@@ -1,10 +1,13 @@
 //index.js
 const APP = getApp()
-
+//var music = wx.createInnerAudioContext();//背景音乐
 Page({
   data: {
     tabCount:0,//选择的tab
-    tabIf:[false,false]
+    tabIf:[false,false],
+    isPower: false,//是否授权了
+    checking:false,//是否在审核状态
+    isAllShow:false,//等回调结束再显示
   },
   tabIdex(e){//tab事件
     this.setData({
@@ -16,11 +19,31 @@ Page({
   frameEvent(){//打开收藏提示框
     this.selectComponent('#frame').showEvent()
   },
-  
+  loginEvent(){//通过授权
+    this.setData({
+      isPower:true,
+    });
+  },
   onLoad: function() {
     this.setData({
       [`tabIf[${this.data.tabCount}]`]: true
-    })
+    });
+
+    if (APP.isCallback) {
+      this.setData({
+        isPower: APP.userInfo.isPower,
+        checking: global.checking,
+        isAllShow:true
+      });
+    } else {
+      APP.checkLoginReadyCallback = res => {
+        this.setData({
+          isPower: APP.userInfo.isPower,
+          checking: global.checking,
+          isAllShow: true
+        });
+      };
+    }
   },
   
   /**
@@ -34,7 +57,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // music.stop();
+    // music.pause();
   },
 
   /**
@@ -70,7 +94,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "蜜囍美文",
+      title: "",
       imageUrl: "https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top.png",
       path: '/pages/index/index'
     };

@@ -1,10 +1,13 @@
-<frame id="frame"></frame>
-<view hidden="{{tabCount!==0}}">
-  <indexTab1 wx:if="{{tabIf[0]}}" ></indexTab1>
-</view>
-<view hidden="{{tabCount!==1}}">
-  <indexTa2 wx:if="{{tabIf[1]}}" ></indexTa2>
-</view>
+<block wx:if="{{isAllShow}}">
+  <frame id="frame"></frame>
+  <view hidden="{{tabCount!==0}}">
+    <indexTab1 wx:if="{{tabIf[0]}}" ></indexTab1>
+  </view>
+  <view hidden="{{tabCount!==1}}">
+    <indexTa2 wx:if="{{tabIf[1]}}" ></indexTa2>
+  </view>
 
 
-<tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>
+  <tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>
+  <loginFrame wx:if="{{!isPower&&!checking}}" bind:loginEvent="loginEvent"></loginFrame>
+</block>

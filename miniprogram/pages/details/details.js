@@ -14,7 +14,10 @@ Page({
     list:{},
     listArr:[],//推荐列表
     adShow: APP.adShow,//广告位显示
-    content:""
+    content:"",
+    isPower: false,//是否授权了
+    checking: false,//是否在审核状态
+    isAllShow:true,//判断过后再显示
   },
 
   musicImg() {//背景音乐的按钮
@@ -71,15 +74,46 @@ Page({
       });
     });
   },
+  loginEvent(){
+    this.setData({ isPower:true})
+  },
+  navIndex(){
+    if(this.ret){
+      wx.reLaunch({
+        url: '/pages/index/index',
+      });
+    }else{
+      wx.navigateBack({
+        delta:10
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad (options){
-    console.log(options,this)
+    // if (APP.isCallback) {
+    //   this.setData({
+    //     isPower: APP.userInfo.isPower,
+    //     checking: global.checking,
+    //     isAllShow: true
+    //   });
+    // } else {
+    //   APP.checkLoginReadyCallback = res => {
+    //     this.setData({
+    //       isPower: APP.userInfo.isPower,
+    //       checking: global.checking,
+    //       isAllShow: true
+    //     });
+    //   };
+    // }
+    // console.log(options,this)
     this.music = wx.createInnerAudioContext();//背景音乐
     this.music.autoplay=true;//自动播放
     this.music.loop=true;//循环播放
     this.id=options.id;
+    this.ret=options.ret;
+    console.log(this.ret,111)
     APP.loadShow()
     Promise.all([this.detailList(),this.recommend()])
     .then(res=>{
@@ -174,13 +208,13 @@ Page({
       return {
         title: data.post_title,
         imageUrl: data.more.beackimg,
-        path: '/pages/details/details?id=' + data.id
+        path: '/pages/details/details?ret=1&id=' + data.id
       };
     } else {//广场消息分享
       return {
         imageUrl: data.more.beackimg,
         title: data.post_title,
-        path: '/pages/details/details?id='+data.id
+        path: '/pages/details/details?ret=1&id='+data.id
       };
     }
   }

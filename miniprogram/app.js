@@ -86,12 +86,12 @@ App({
                   code: codes,
                 }
               }).then(res => {
-                _this.isCallback = true;//告诉主页登录成功
                 // console.log("用户信息", res)
                 _this.userInfo = {
                   isPower: true,
                   ...res
                 };
+                _this.isCallback = true;//告诉主页登录成功
                 wx.aldstat.sendOpenid(res.openid);
                 // wx.setStorage({//缓存token
                 //   key: "tokens",

@@ -1,88 +1,91 @@
 <import src="/utils/wxParse/wxParse.wxml" />
-
-<view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
-  <view class="advertising" wx:if="{{adShow}}">
-    我是个广告
-  </view>
-  <!-- 头部 -->
-  <view class="detailTop">
-    <view class="picBox">
-      <view class="pic">
-        <open-data type="userAvatarUrl"></open-data>
+<view hidden="{{!isAllShow}}">
+  <view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
+    <view class="advertising" wx:if="{{adShow}}">
+      我是个广告
+    </view>
+    <!-- 头部 -->
+    <view class="detailTop">
+      <view class="picBox">
+        <view class="pic">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <image class="picBg picBgA"  src="{{list.more.headimg?list.more.headimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png'}}">
+        </image>
       </view>
-      <image class="picBg picBgA"  src="{{list.more.headimg?list.more.headimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png'}}">
-      </image>
-    </view>
 
-    <view class="userName">
-      亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
+      <view class="userName">
+        亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
+      </view>
+      <view class="benediction">{{list.post_title}}</view>
+      <!-- <view class="benediction">{{list.post_title}}</view>
+      <view class="benediction">{{list.post_title}}</view> -->
+      <view class="flowerBox">
+        <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
+      </view>
     </view>
-    <view class="benediction">{{list.post_title}}</view>
-    <!-- <view class="benediction">{{list.post_title}}</view>
-    <view class="benediction">{{list.post_title}}</view> -->
+    <!-- 正文 -->
+    <!-- 组件 -->
+    <!-- <view class="zhengwen">
+    <template is="wxParse" data="{{wxParseData:textHtml.nodes}}" /> 
+    </view> -->
+    <!-- 自己 -->
+    <rich-text nodes="{{content}}" space="nbsp"></rich-text>
+    <!-- 底部 -->
+    <view class="detailTop">
+      <view class="picBox">
+        <view class="pic">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <image class="picBg picBgA"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png">
+        </image>
+      </view>
+      <view class="benediction">看完记得转发给朋友们看</view>
+      <view class="flowerBox">
+        <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
+      </view>
+    </view>
+    <view class="advertising" wx:if="{{adShow}}">
+      我是个广告
+    </view>
+    <!-- 推荐 -->
+    <recommend list="{{listArr}}"></recommend>
     <view class="flowerBox">
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
-  </view>
-  <!-- 正文 -->
-  <!-- 组件 -->
-  <!-- <view class="zhengwen">
-  <template is="wxParse" data="{{wxParseData:textHtml.nodes}}" /> 
-  </view> -->
-  <!-- 自己 -->
-  <rich-text nodes="{{content}}" space="nbsp"></rich-text>
-  <!-- 底部 -->
-  <view class="detailTop">
-    <view class="picBox">
-      <view class="pic">
-        <open-data type="userAvatarUrl"></open-data>
+    <view class="advertising" wx:if="{{adShow}}">
+      我是个广告
+    </view>
+    <view  class="goIndex" catchtap="navIndex">
+      <image class="homePic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>
+      返回首页
+    </view>
+
+    <!-- <view class="flock rewardA">
+      <button open-type="contact" hover-class="none">
+        群
+      </button>
+    </view> -->
+
+    <view class="shareBtn">
+      <view>
+        <button open-type="share" class="myWx" hover-class="none">
+          发送给好友
+        </button>
       </view>
-      <image class="picBg picBgA"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png">
-      </image>
+      <view class="shareRed gopenA">
+        <button open-type="share" class="myWx" hover-class="none">
+          分享到群
+        </button>
+      </view>
     </view>
-    <view class="benediction">看完记得转发给朋友们看</view>
-    <view class="flowerBox">
-      <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
-    </view>
+    <!-- 音乐图标 -->
+    <image catchtap="musicImg" class="music {{isDistance||!adShow?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
   </view>
-  <view class="advertising" wx:if="{{adShow}}">
-    我是个广告
-  </view>
-  <!-- 推荐 -->
-  <recommend list="{{listArr}}"></recommend>
-  <view class="flowerBox">
-    <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
-  </view>
-  <view class="advertising" wx:if="{{adShow}}">
-    我是个广告
-  </view>
-  <navigator open-type="navigateBack" class="goIndex" url="/pages/index/index" hover-class="none">
-    <image class="homePic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>
-    返回首页
-  </navigator>
 
-  <!-- <view class="flock rewardA">
-    <button open-type="contact" hover-class="none">
-      群
-    </button>
-  </view> -->
 
-  <view class="shareBtn">
-    <view>
-      <button open-type="share" class="myWx" hover-class="none">
-        发送给好友
-      </button>
-    </view>
-    <view class="shareRed gopenA">
-      <button open-type="share" class="myWx" hover-class="none">
-        分享到群
-      </button>
-    </view>
-  </view>
-  <!-- 音乐图标 -->
-  <image catchtap="musicImg" class="music {{isDistance||!adShow?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
+    <!-- <loginFrame wx:if="{{!isPower&&!checking}}" bind:loginEvent="loginEvent"></loginFrame> -->
 </view>
-
 <view hidden="{{isList}}" class="load">
   加载中....
 </view>

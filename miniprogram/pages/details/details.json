@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "recommend":"/components/recommend/recommend"
+    "recommend":"/components/recommend/recommend",
+    "loginFrame": "/components/login/login"
   }
 }

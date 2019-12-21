@@ -2,7 +2,7 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const versionList = {
-  'v1.1.4': false,
+  'v1.1.5': true,
 };
 // 云函数入口函数
 exports.main = async (event, context) => {

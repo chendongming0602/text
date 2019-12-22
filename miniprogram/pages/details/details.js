@@ -207,12 +207,12 @@ Page({
     if (!res.target) {//正常分享
       return {
         title: data.post_title,
-        imageUrl: data.more.beackimg,
+        imageUrl: data.more.thumbnail,
         path: '/pages/details/details?ret=1&id=' + data.id
       };
     } else {//广场消息分享
       return {
-        imageUrl: data.more.beackimg,
+        imageUrl: data.more.thumbnail,
         title: data.post_title,
         path: '/pages/details/details?ret=1&id='+data.id
       };

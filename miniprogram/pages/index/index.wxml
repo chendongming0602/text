@@ -9,5 +9,5 @@
 
 
   <tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>
-  <loginFrame wx:if="{{!isPower&&!checking}}" bind:loginEvent="loginEvent"></loginFrame>
+  <loginFrame wx:if="{{!isPower&&!checking.checking}}" bind:loginEvent="loginEvent"></loginFrame>
 </block>

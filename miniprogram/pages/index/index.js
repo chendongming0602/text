@@ -6,7 +6,7 @@ Page({
     tabCount:0,//选择的tab
     tabIf:[false,false],
     isPower: false,//是否授权了
-    checking:false,//是否在审核状态
+    checking:{},//是否在审核状态
     isAllShow:false,//等回调结束再显示
   },
   tabIdex(e){//tab事件
@@ -28,24 +28,27 @@ Page({
     this.setData({
       [`tabIf[${this.data.tabCount}]`]: true
     });
-
     if (APP.isCallback) {
-      this.setData({
-        isPower: APP.userInfo.isPower,
-        checking: global.checking,
-        isAllShow:true
-      });
+      this.allS();
     } else {
       APP.checkLoginReadyCallback = res => {
-        this.setData({
-          isPower: APP.userInfo.isPower,
-          checking: global.checking,
-          isAllShow: true
-        });
+        this.allS();
       };
-    }
+    };
+   
+
   },
-  
+  allS(){//通过app.js请求后再触发
+  console.log("首页开始")
+    this.setData({
+      isPower: APP.userInfo.isPower,
+      checking: { ...APP.configs},
+      isAllShow: true
+    });
+    wx.setNavigationBarTitle({
+      title: APP.configs.appTitle
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -94,9 +97,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "",
-      imageUrl: "https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top.png",
-      path: '/pages/index/index'
+      ...this.data.checking.share
     };
   }
 })

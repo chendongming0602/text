@@ -4,3 +4,4 @@ export const config = {
   version: "v1.1.5",
   deviceType: "wxapp"
 }
+// 更改版本配置，设置审核信息

@@ -9,21 +9,28 @@ try{
 }
 const ald = require('./utils/ald-stat.js');//配置阿里丁
 import { config } from './utils/config.js';
-let { ver } = require('./utils/version.js');//审核关闭需要的东西
+//let { ver } = require('./utils/version.js');//审核关闭需要的东西
 App({
 
   userInfo:{
     isPower:false
   },
+  configs:{//审核控制数据
+
+  },
   isCallback:false,
   adShow:false,
   request({ path = '/', method, data }) {
     return new Promise((resolve, reject) => {
+      let datas={
+        ...data,
+        version: config.version
+      }
       wx.request({
         url: `${config.apiHost}${path}`,
         method: method || 'GET',
         // header: headers,
-        data: data || {},
+        data: datas || {},
         success: res => {
           if (res.statusCode===200) {
             resolve(res.data.data)
@@ -91,7 +98,7 @@ App({
                   isPower: true,
                   ...res
                 };
-                _this.isCallback = true;//告诉主页登录成功
+                //_this.isCallback = true;//告诉主页登录成功
                 wx.aldstat.sendOpenid(res.openid);
                 // wx.setStorage({//缓存token
                 //   key: "tokens",
@@ -109,8 +116,17 @@ App({
       });
     });
   },
+  configE(){//审核判断信息
+    return this.request({
+      path:"/api/portal/Articles/getMiniConfig",
+    }).then(res=>{
+      return res
+    });
+  },
   onLaunch: function () {
-    Promise.all([this.getUserPic(), ver()]).then(() => {
+    Promise.all([this.getUserPic(), this.configE()]).then((res) => {
+      let configs=res[1];
+      this.configs = { ...configs };
       console.log("全部调用完成");
       this.isCallback = true;//向首页传递已经判断授权
       if (this.checkLoginReadyCallback) {
@@ -122,7 +138,7 @@ App({
       if (this.checkLoginReadyCallback) {
         this.checkLoginReadyCallback();
       }
-    })
+    });
     // if (!wx.cloud) {
     //   console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     // } else {

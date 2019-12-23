@@ -16,10 +16,9 @@ Page({
     adShow: APP.adShow,//广告位显示
     content:"",
     isPower: false,//是否授权了
-    checking: false,//是否在审核状态
+    checking: {},//审核数据
     isAllShow:true,//判断过后再显示
   },
-
   musicImg() {//背景音乐的按钮
     if (this._isMusic) return this.music.stop();//APP.hintShow("背景音乐播放失败！")
     this.setData({
@@ -92,28 +91,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options){
-    // if (APP.isCallback) {
-    //   this.setData({
-    //     isPower: APP.userInfo.isPower,
-    //     checking: global.checking,
-    //     isAllShow: true
-    //   });
-    // } else {
-    //   APP.checkLoginReadyCallback = res => {
-    //     this.setData({
-    //       isPower: APP.userInfo.isPower,
-    //       checking: global.checking,
-    //       isAllShow: true
-    //     });
-    //   };
-    // }
-    // console.log(options,this)
+    if (APP.isCallback) {
+      this.allS()
+    } else {
+      APP.checkLoginReadyCallback = res => {
+        this.allS()
+      };
+    }
     this.music = wx.createInnerAudioContext();//背景音乐
     this.music.autoplay=true;//自动播放
     this.music.loop=true;//循环播放
     this.id=options.id;
     this.ret=options.ret;
-    console.log(this.ret,111)
     APP.loadShow()
     Promise.all([this.detailList(),this.recommend()])
     .then(res=>{
@@ -144,7 +133,16 @@ Page({
     })
     
   },
-
+  allS() {//通过app.js请求后再触发
+    this.setData({
+      isPower: APP.userInfo.isPower,
+      checking: { ...APP.configs },
+      isAllShow: true
+    });
+    wx.setNavigationBarTitle({
+      title: APP.configs.appTitle
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

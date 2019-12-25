@@ -164,7 +164,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.music.play();
+    if (this.data.isMusic) {
+      this.music.play();
+    }
   },
 
   /**

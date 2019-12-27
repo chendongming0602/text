@@ -86,6 +86,8 @@ App({
           let codes = res.code
           wx.getUserInfo({
             success(res) {
+              var userInfo = res.userInfo
+              // console.log(res)
               _this.request({
                 path: "/api/wx/login/wxLogin",
                 method: "POST",
@@ -96,10 +98,16 @@ App({
                 // console.log("用户信息", res)
                 _this.userInfo = {
                   isPower: true,
-                  ...res
+                  ...res,
+                  ...userInfo
                 };
                 //_this.isCallback = true;//告诉主页登录成功
-                wx.aldstat.sendOpenid(res.openid);
+                try{
+                  wx.aldstat.sendOpenid(res.openid);
+                }catch(err){
+                  console.log("阿拉丁记录用户错误",err)
+                }
+               
                 // wx.setStorage({//缓存token
                 //   key: "tokens",
                 //   data: res.token

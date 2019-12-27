@@ -18,6 +18,7 @@ Page({
     isPower: false,//是否授权了
     checking: {},//审核数据
     isAllShow:true,//判断过后再显示
+    info:{}
   },
   musicImg() {//背景音乐的按钮
     if (this._isMusic) return this.music.stop();//APP.hintShow("背景音乐播放失败！")
@@ -57,6 +58,7 @@ Page({
       this.setData({
         list: obj
       });
+      
       return res
     });
   },
@@ -91,6 +93,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options){
+    this.id = options.id;
+    this.ret = options.ret;
     if (APP.isCallback) {
       this.allS()
     } else {
@@ -101,47 +105,68 @@ Page({
     this.music = wx.createInnerAudioContext();//背景音乐
     this.music.autoplay=true;//自动播放
     this.music.loop=true;//循环播放
-    this.id=options.id;
-    this.ret=options.ret;
-    APP.loadShow()
-    Promise.all([this.detailList(),this.recommend()])
-    .then(res=>{
-      wx.hideLoading()
-      try{
-        if (!res[0].more.audio){
-          // APP.hintShow("背景音乐播放失败！");
-          this.setData({ isMusic: false });
-          this._isMusic = true;
-        }
-        this.music.onError((e) => {
-          // APP.hintShow("背景音乐播放失败！");
-          this.setData({ isMusic: false });
-          this._isMusic = true;
-        });
-        if (this._isMusic) return this.music.stop();
-        this.music.src = res[0].more.audio;
-        this.music.title = "背景音乐"
-       
-      }catch(err){
-        // APP.hintShow("背景音乐播放失败！");
-        this.setData({isMusic:false});
-        this._isMusic=true
-      }
-      wx.hideLoading()
-    }).catch(()=>{
-      APP.hintShow("数据加载失败！！")
-    })
+
     
   },
   allS() {//通过app.js请求后再触发
     this.setData({
       isPower: APP.userInfo.isPower,
       checking: { ...APP.configs },
-      isAllShow: true
+      isAllShow: true,
+      info: APP.userInfo
     });
     wx.setNavigationBarTitle({
       title: APP.configs.appTitle
     });
+   
+    APP.loadShow()
+    Promise.all([this.detailList(), this.recommend()])
+      .then(res => {
+        let datas=this.data
+        try{
+          if (!!datas.info.nickName){
+            APP.aldstat.sendEvent('进入详情页面', {
+              "用户名字": datas.info.nickName,
+              "用户头像": datas.info.avatarUrl,
+              "文章标题": datas.list.post_title,
+              "文章ID":datas.list.id
+            });
+          }else{
+            APP.aldstat.sendEvent('进入详情页面', {
+              "用户名字": "用户未授权",
+              "用户头像": "用户未授权",
+              "文章标题": datas.list.post_title,
+              "文章ID": datas.list.id
+            });
+          }
+        }catch(err){
+          console.log("阿里丁记录文章标题失败",err)
+        }
+        wx.hideLoading()
+        try {
+          if (!res[0].more.audio) {
+            // APP.hintShow("背景音乐播放失败！");
+            this.setData({ isMusic: false });
+            this._isMusic = true;
+          }
+          this.music.onError((e) => {
+            // APP.hintShow("背景音乐播放失败！");
+            this.setData({ isMusic: false });
+            this._isMusic = true;
+          });
+          if (this._isMusic) return this.music.stop();
+          this.music.src = res[0].more.audio;
+          this.music.title = "背景音乐"
+
+        } catch (err) {
+          // APP.hintShow("背景音乐播放失败！");
+          this.setData({ isMusic: false });
+          this._isMusic = true
+        }
+        wx.hideLoading()
+      }).catch(() => {
+        APP.hintShow("数据加载失败！！")
+      });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

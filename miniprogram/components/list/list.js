@@ -14,14 +14,18 @@ Component({
     isEmptyList:{//数据为空
       type:Boolean,
       value:true
-    }
+    },
+    count:{
+      type:String,
+      value:"默认"
+    },//判断是哪里来的(给广告)
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    adShow:APP.adShow
   },
 
   /**

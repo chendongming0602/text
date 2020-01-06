@@ -56,9 +56,9 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/details/details",
+					"name": "详细",
 					"pathName": "pages/details/details",
-					"query": "id=768",
+					"query": "id=815",
 					"scene": null
 				}
 			]

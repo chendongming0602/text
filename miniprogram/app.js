@@ -19,7 +19,7 @@ App({
 
   },
   isCallback:false,
-  adShow:false,
+  adShow:true,//控制广告位
   request({ path = '/', method, data }) {
     return new Promise((resolve, reject) => {
       let datas={

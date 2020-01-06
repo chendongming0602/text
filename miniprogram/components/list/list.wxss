@@ -32,11 +32,11 @@
 }
 .advertising1{
   width: 100%;
-  height: 232rpx;
-  background: #f0f;
   margin-top: 40rpx; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .tab1Title{
   display: flex;
   justify-content: center;

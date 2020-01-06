@@ -1,9 +1,9 @@
 <import src="/utils/wxParse/wxParse.wxml" />
 <view hidden="{{!isAllShow}}">
   <view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
-    <view class="advertising" wx:if="{{adShow}}">
+    <!-- <view class="advertising" wx:if="{{adShow}}">
       我是个广告
-    </view>
+    </view> -->
     <!-- 头部 -->
     <view class="detailTop">
       <view class="picBox">
@@ -45,16 +45,17 @@
         <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
       </view>
     </view>
-    <view class="advertising" wx:if="{{adShow}}">
+    <!-- <view class="advertising" wx:if="{{adShow}}">
       我是个广告
-    </view>
+    </view> -->
     <!-- 推荐 -->
     <recommend list="{{listArr}}"></recommend>
     <view class="flowerBox">
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
+    <!-- 广告 -->
     <view class="advertising" wx:if="{{adShow}}">
-      我是个广告
+      <ad unit-id="adunit-655339b7f4e52f20"></ad>
     </view>
     <view  class="goIndex" catchtap="navIndex">
       <image class="homePic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>
@@ -80,7 +81,7 @@
       </view>
     </view>
     <!-- 音乐图标 -->
-    <image catchtap="musicImg" class="music {{isDistance||!adShow?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
+    <image catchtap="musicImg" class="music {{isDistance||true?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
   </view>
 
 

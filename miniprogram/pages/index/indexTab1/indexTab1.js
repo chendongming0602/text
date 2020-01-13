@@ -14,7 +14,8 @@ Component({
   data: {
     list:[],
     isEmptyList: true,//加载为空了
-    newList:[]
+    newList:[],
+    adShow: APP.adShow
   },
   attached(){
     this.more=false;//是否是上拉加载

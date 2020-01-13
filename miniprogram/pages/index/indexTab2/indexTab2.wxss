@@ -52,10 +52,8 @@
 }
 .advertising2{
   width: 100%;
-  padding: 40rpx 30rpx 35rpx;
-}
-.advertising2 view{
-  width: 100%;
-  height: 232rpx;
-  background: rgb(182, 182, 64);
+  padding: 40rpx 30rpx 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

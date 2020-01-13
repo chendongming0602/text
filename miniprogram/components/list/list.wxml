@@ -14,6 +14,10 @@
     <view class="advertising1" wx:if="{{index===3&&count==='new'&&adShow}}">
       <ad unit-id="adunit-697b5a1f881a1c1e"></ad>
     </view>
+    <!-- 广告位 -->
+    <view class="advertising1" wx:if="{{index===3&&count==='hot'&&adShow}}">
+      <ad unit-id="adunit-e4eb18ad7d1e2c06"></ad>
+    </view>
   </block>
   <view class="empty1" wx:if="{{isEmpty&&!isEmptyList}}">
     暂无更多图文～

@@ -17,6 +17,9 @@
     <view class="newTop">
       <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top2.png"></image>
     </view>
+    <view class="indexAd" wx:if="{{adShow}}">
+      <ad unit-id="adunit-2f072289360e7bf1" ad-type="video" ad-theme="white"></ad>
+    </view>
     <!-- 最新内容 -->
     <listBox name="最新内容" list="{{newList}}" count="new"></listBox>
     <!-- 更多内容 -->

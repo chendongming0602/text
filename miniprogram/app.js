@@ -20,6 +20,7 @@ App({
   },
   isCallback:false,
   adShow:true,//控制广告位
+  adTable:0,//详情插屏广告通知次数
   request({ path = '/', method, data }) {
     return new Promise((resolve, reject) => {
       let datas={

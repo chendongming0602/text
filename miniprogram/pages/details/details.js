@@ -2,6 +2,7 @@
 const APP = getApp();
 // const WxParse = require('../../utils/wxParse/wxParse.js');//组件解析（卡）
 import {rich} from '../../utils/rich.js';//解析富文本
+let interstitialAd = null;//插屏广告
 Page({
 
   /**
@@ -104,9 +105,31 @@ Page({
     }
     this.music = wx.createInnerAudioContext();//背景音乐
     this.music.autoplay=true;//自动播放
-    this.music.loop=true;//循环播放
+    this.music.loop=true;//循环播放;
 
-    
+    // 插屏广告
+    let adTable = APP.adTable;
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({ adUnitId: 'adunit-115767994ac2d280' });
+      // interstitialAd.onLoad(() => {
+      //   console.log('onLoad event emit', APP.adTable)
+      // })
+      // interstitialAd.onError((err) => {
+      //   console.log('onError event emit', err)
+      // })
+      // interstitialAd.onClose((res) => {
+      //   console.log('onClose event emit', res)
+      // })
+    };
+    if (adTable%2===0){//隔一次显示一次
+      if (interstitialAd) {
+        interstitialAd.show().catch((err) => {
+          console.error(err,"插屏广告显示失败")
+        })
+      }
+    };
+    adTable++;
+    APP.adTable = adTable;
   },
   allS() {//通过app.js请求后再触发
     this.setData({
@@ -172,7 +195,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
   onPageScroll: function (e) {//滚动触发
     if(e.scrollTop>150){
@@ -192,6 +215,7 @@ Page({
     if (this.data.isMusic) {
       this.music.play();
     }
+    
   },
 
   /**

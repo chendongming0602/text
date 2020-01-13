@@ -49,13 +49,13 @@
       我是个广告
     </view> -->
     <!-- 推荐 -->
+        <!-- 广告 -->
+    <view class="advertising" wx:if="{{adShow}}">
+      <ad unit-id="adunit-655339b7f4e52f20"></ad>
+    </view>
     <recommend list="{{listArr}}"></recommend>
     <view class="flowerBox">
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
-    </view>
-    <!-- 广告 -->
-    <view class="advertising" wx:if="{{adShow}}">
-      <ad unit-id="adunit-655339b7f4e52f20"></ad>
     </view>
     <view  class="goIndex" catchtap="navIndex">
       <image class="homePic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>

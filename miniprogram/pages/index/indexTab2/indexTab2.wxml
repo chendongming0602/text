@@ -11,11 +11,12 @@
   </view>
 
   <view class="newBox" slot="main">
-    <!-- <view class="advertising2" wx:if="{{adShow}}">
-      <view>我是个广告</view>
-    </view> -->
+    <view class="advertising2" wx:if="{{adShow}}">
+      <ad unit-id="adunit-78fadd3272de7656" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
+    </view>
+    
     <!-- 热门内容 -->
-    <listBox name="热门内容" list="{{newList}}"></listBox>
+    <listBox name="热门内容" list="{{newList}}" count="hot"></listBox>
     <!-- 更多内容 -->
     <listBox  name="更多内容" isEmpty="true" list="{{list}}" isEmptyList="{{isEmptyList}}" ></listBox>
   </view>

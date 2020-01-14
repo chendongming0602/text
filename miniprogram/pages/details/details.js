@@ -108,28 +108,28 @@ Page({
     this.music.loop=true;//循环播放;
 
     // 插屏广告
-    let adTable = APP.adTable;
-    if (wx.createInterstitialAd) {
-      interstitialAd = wx.createInterstitialAd({ adUnitId: 'adunit-115767994ac2d280' });
-      // interstitialAd.onLoad(() => {
-      //   console.log('onLoad event emit', APP.adTable)
-      // })
-      // interstitialAd.onError((err) => {
-      //   console.log('onError event emit', err)
-      // })
-      // interstitialAd.onClose((res) => {
-      //   console.log('onClose event emit', res)
-      // })
-    };
-    if (adTable%2===0){//隔一次显示一次
-      if (interstitialAd) {
-        interstitialAd.show().catch((err) => {
-          console.error(err,"插屏广告显示失败")
-        })
-      }
-    };
-    adTable++;
-    APP.adTable = adTable;
+    // let adTable = APP.adTable;
+    // if (wx.createInterstitialAd) {
+    //   interstitialAd = wx.createInterstitialAd({ adUnitId: 'adunit-115767994ac2d280' });
+    //   // interstitialAd.onLoad(() => {
+    //   //   console.log('onLoad event emit', APP.adTable)
+    //   // })
+    //   // interstitialAd.onError((err) => {
+    //   //   console.log('onError event emit', err)
+    //   // })
+    //   // interstitialAd.onClose((res) => {
+    //   //   console.log('onClose event emit', res)
+    //   // })
+    // };
+    // if (adTable%2===0){//隔一次显示一次
+    //   if (interstitialAd) {
+    //     interstitialAd.show().catch((err) => {
+    //       console.error(err,"插屏广告显示失败")
+    //     })
+    //   }
+    // };
+    // adTable++;
+    // APP.adTable = adTable;
   },
   allS() {//通过app.js请求后再触发
     this.setData({

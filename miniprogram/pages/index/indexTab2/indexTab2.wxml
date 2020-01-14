@@ -11,9 +11,9 @@
   </view>
 
   <view class="newBox" slot="main">
-    <view class="advertising2" wx:if="{{adShow}}">
+    <!-- <view class="advertising2" wx:if="{{adShow}}">
       <ad unit-id="adunit-78fadd3272de7656" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad>
-    </view>
+    </view> -->
     
     <!-- 热门内容 -->
     <listBox name="热门内容" list="{{newList}}" count="hot"></listBox>

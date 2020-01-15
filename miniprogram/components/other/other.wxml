@@ -1,8 +1,8 @@
-<view class="other" catchtouchmove="true" hidden="{{true}}">
+<view class="other" catchtouchmove="true" hidden="{{isShow}}">
   <view class="content">
     <image class="redBox" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/redBox.png"></image>
     <image class="redBoxTwo redBoxTwoA" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/redBoxTwo.png"></image>
-    <image class="bot" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/bot.png"></image>
-    <image class="closeRed" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/closeRed.png"></image>
+    <image catchtap="dot" class="bot" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/bot.png"></image>
+    <image catchtap="closeRed" class="closeRed" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/closeRed.png"></image>
   </view>
 </view>

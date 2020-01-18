@@ -18,7 +18,7 @@
       <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top2.png"></image>
     </view>
     <view class="other" catchtap="dot">
-         <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/album/shaer/bg.png" ></image>
+         <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/%E7%9B%B8%E5%86%8C%E5%8A%A8%E5%9B%BE.gif" ></image>
     </view>
  
     <!-- <view class="indexAd" wx:if="{{adShow}}">

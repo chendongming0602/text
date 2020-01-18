@@ -252,19 +252,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    let data = this.data.list
-    if (!res.target) {//正常分享
+    let data = this.data.list;
       return {
-        title: data.post_title,
-        imageUrl: data.more.thumbnail,
+        title: data.more.share_title ? data.more.share_title:data.post_title,
+        imageUrl: data.more.share_img ? data.more.share_img:data.more.thumbnail,
         path: '/pages/details/details?ret=1&id=' + data.id
       };
-    } else {//广场消息分享
-      return {
-        imageUrl: data.more.thumbnail,
-        title: data.post_title,
-        path: '/pages/details/details?ret=1&id='+data.id
-      };
-    }
   }
 })

@@ -86,8 +86,8 @@
 }
 .other{
   width: 100%;
-  height: 334rpx;
-  padding: 30rpx
+  height: 300rpx;
+  padding: 30rpx;
 }
 .other image{
   width: 100%;

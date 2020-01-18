@@ -105,7 +105,7 @@ Component({
         extraData: {
           foo: 'bar'
         },
-        envVersion: 'trial',
+        envVersion: 'release',
         success(res) {
           console.log("跳转成功")
           // 打开成功

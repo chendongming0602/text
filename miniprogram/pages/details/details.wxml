@@ -20,8 +20,12 @@
       <view class="benediction">{{list.post_title}}</view>
       <!-- <view class="benediction">{{list.post_title}}</view>
       <view class="benediction">{{list.post_title}}</view> -->
-      <view class="flowerBox">
+      <view class="flowerBox flowerBoxTop">
         <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
+      </view>
+
+      <view class="desAds">
+        <ad unit-id="adunit-aa8ef67c5801cf09"></ad>
       </view>
     </view>
     <!-- 正文 -->

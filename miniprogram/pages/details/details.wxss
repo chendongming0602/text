@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40rpx;
 }
 .music{
   width: 68rpx;
@@ -222,4 +223,14 @@
 }
 .rewardA{
   animation: rewardA 2s cubic-bezier(0.2,0,0,1) infinite;
+}
+.desAds{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50rpx;
+}
+.flowerBoxTop{
+  padding-bottom: 50rpx;
 }

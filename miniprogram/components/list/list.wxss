@@ -29,6 +29,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-weight: bold;
+  font-size: 32rpx;
 }
 .advertising1{
   width: 100%;
@@ -51,7 +52,7 @@
 }
 .newContent{
   color: #D61313;
-  font-size: 32rpx;
+  font-size: 38rpx;
   font-weight: bold;
   margin: 0 15rpx;
 }

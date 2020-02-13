@@ -71,12 +71,12 @@
   width: 66rpx;
   height: 34rpx;
 }
-.newContent{
+/* .newContent{
   color: #D61313;
   font-size: 32rpx;
   font-weight: bold;
   margin: 0 15rpx;
-}
+} */
 .indexAd{
   display: flex;
   justify-content: center;

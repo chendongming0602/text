@@ -1,7 +1,7 @@
 <view class="loginC" catchtouchmove="true">
   <view class="centerC">
     <view class="title">1.点击“<text>允许</text>”</view>
-    <image class="loginImg" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/login.png"></image>
+    <image class="loginImg" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/login.png"></image>
     <view class="but">
       <button hover-class="none" class="lgBtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">我知道了</button>
     </view>

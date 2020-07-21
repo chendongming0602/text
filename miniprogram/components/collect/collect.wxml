@@ -1,11 +1,11 @@
 <view class="collectBox" catchtap="collectBox" wx:if="{{show}}">
   <view class="ceLeft">
     点击
-    <image class="dot" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/dot.png"></image>
+    <image class="dot" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/dot.png"></image>
     添加到我的小程序，更方便
   </view>
   <view class="ceRight">
-    <image class="hand" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/hand.png"></image>
-    <image catchtap="close" class="close" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/close.png"></image>
+    <image class="hand" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/hand.png"></image>
+    <image catchtap="close" class="close" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/close.png"></image>
   </view>
 </view>

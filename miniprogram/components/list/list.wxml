@@ -1,7 +1,7 @@
  <view class="tab1Title">
-    <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/cloudLeft.png"></image>
+    <image  src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/cloudLeft.png"></image>
     <text class="newContent">{{name}}</text>
-    <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/cloudRight.png"></image>
+    <image  src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/cloudRight.png"></image>
 </view>
 
 <view class="ListBox1">

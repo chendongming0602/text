@@ -1,6 +1,6 @@
 <import src="/utils/wxParse/wxParse.wxml" />
 <view hidden="{{!isAllShow}}">
-  <view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
+  <view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
     <!-- <view class="advertising" wx:if="{{adShow}}">
       我是个广告
     </view> -->
@@ -10,7 +10,7 @@
         <view class="pic">
           <open-data type="userAvatarUrl"></open-data>
         </view>
-        <image class="picBg picBgA"  src="{{list.more.headimg?list.more.headimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png'}}">
+        <image class="picBg picBgA"  src="{{list.more.headimg?list.more.headimg:'https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png'}}">
         </image>
       </view>
 
@@ -21,7 +21,7 @@
       <!-- <view class="benediction">{{list.post_title}}</view>
       <view class="benediction">{{list.post_title}}</view> -->
       <view class="flowerBox flowerBoxTop">
-        <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
+        <image class="flower" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
       </view>
 
       <view class="desAds">
@@ -41,12 +41,12 @@
         <view class="pic">
           <open-data type="userAvatarUrl"></open-data>
         </view>
-        <image class="picBg picBgA"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png">
+        <image class="picBg picBgA"  src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png">
         </image>
       </view>
       <view class="benediction">看完记得转发给朋友们看</view>
       <view class="flowerBox">
-        <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
+        <image class="flower" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
       </view>
     </view>
     <!-- <view class="advertising" wx:if="{{adShow}}">
@@ -59,10 +59,10 @@
     </view>
     <recommend list="{{listArr}}"></recommend>
     <view class="flowerBox">
-      <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
+      <image class="flower" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
     <view  class="goIndex" catchtap="navIndex">
-      <image class="homePic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>
+      <image class="homePic" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>
       返回首页
     </view>
 
@@ -85,7 +85,7 @@
       </view>
     </view>
     <!-- 音乐图标 -->
-    <image catchtap="musicImg" class="music {{isDistance||true?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
+    <image catchtap="musicImg" class="music {{isDistance||true?'music2':''}} {{isMusic?'musicA':''}}" src="{{isMusic?'https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/music.png':'https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/details/musicNo.png'}}"></image>
   </view>
 
 

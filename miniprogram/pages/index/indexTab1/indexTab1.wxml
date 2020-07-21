@@ -6,7 +6,7 @@
 >
   <view class="pulldown-loadng" slot="pulldown-loading-ele">
     <view class="loading-icon-text">
-      <!-- <image class="loadingImg"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
+      <!-- <image class="loadingImg"  src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
       正在刷新...
     </view>
   </view>
@@ -15,10 +15,10 @@
     <!-- 收藏小程序 -->
     <collect></collect>
     <view class="newTop">
-      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top2.png"></image>
+      <image src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/top2.png"></image>
     </view>
     <view class="other" catchtap="dot">
-         <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/%E7%9B%B8%E5%86%8C%E5%8A%A8%E5%9B%BE2.gif" ></image>
+         <image src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/%E7%9B%B8%E5%86%8C%E5%8A%A8%E5%9B%BE2.gif" ></image>
     </view>
  
     <!-- <view class="indexAd" wx:if="{{adShow}}">

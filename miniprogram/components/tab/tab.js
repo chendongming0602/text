@@ -14,13 +14,13 @@ Component({
     list:[
       {
         name:"最新",
-        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/new.png",
-        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/newNo.png"
+        url:"https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/tab/new.png",
+        urlNo:"https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/tab/newNo.png"
       },
       {
         name:"最热",
-        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/fire.png",
-        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/fireNo.png"
+        url:"https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/tab/fire.png",
+        urlNo:"https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/tab/fireNo.png"
       }
     ],
     count:1

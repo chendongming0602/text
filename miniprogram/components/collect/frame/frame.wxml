@@ -2,14 +2,14 @@
     <view class="frameItem">
       <view class="frame1">
         1.点击
-        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/dotRed.png"></image>
+        <image src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/dotRed.png"></image>
       </view>
-      <image class="frame1Img" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/frame1.png"></image>
+      <image class="frame1Img" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/frame1.png"></image>
 
       <view class="frame2">
         2.点击“<text>添加到我的小程序</text>”
       </view>
-      <image class="frame2Img" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/frame2.png"></image>
+      <image class="frame2Img" src="https://minis-resources-1254468731.cos.ap-guangzhou.myqcloud.com/text/new/frame2.png"></image>
       <view class="know" catchtap="hideEvent">我知道了</view>
     </view>
 </view>
